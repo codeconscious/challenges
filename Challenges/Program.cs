@@ -28,6 +28,7 @@ internal static class Program
 
             // Miscellanous problems
             "longest-substring" => new Misc.LongestSubstring(),
+            "palindrome" => new Misc.Palindrome(),
 
             // Invalid problem IDs
             _ => throw new ArgumentException("An invalid operation was passed in.")
