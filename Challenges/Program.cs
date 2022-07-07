@@ -1,10 +1,9 @@
 ﻿global using static System.Console;
 global using static Challenges.Utility;
-using System;
 
 namespace Challenges;
 
-internal class Program
+internal static class Program
 {
     public static void Main(string[] args)
     {
@@ -26,6 +25,9 @@ internal class Program
 
             // Problems from friends
             "alphanumber" => new Friends.AlphabeticNumberPuzzleSolver(),
+
+            // Miscellanous problems
+            "longest-substring" => new Misc.LongestSubstring(),
 
             // Invalid problem IDs
             _ => throw new ArgumentException("An invalid operation was passed in.")
