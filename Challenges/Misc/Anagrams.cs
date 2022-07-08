@@ -1,16 +1,16 @@
 namespace Challenges.Misc;
 
-public class Palindrome : IRunnable
+public class Anagrams : IRunnable
 {
     public void Run()
     {
-        WriteLine(AreStringsPalindromesOfEachOther("aaab", "baaa"));
-        WriteLine(AreStringsPalindromesOfEachOther("aaab", "baaaa")); // Unequal
-        WriteLine(AreStringsPalindromesOfEachOther("こんにちは！", "！はちにこん"));
-        WriteLine(AreStringsPalindromesOfEachOther("こんにちは！", "はちにこん")); // Unequal
+        WriteLine(AreStringsAnagramsOfEachOther("aaab", "baaa"));
+        WriteLine(AreStringsAnagramsOfEachOther("aaab", "baaaa")); // Unequal
+        WriteLine(AreStringsAnagramsOfEachOther("こんにちは！", "！はちにこん"));
+        WriteLine(AreStringsAnagramsOfEachOther("こんにちは！", "はちにこん")); // Unequal
     }
 
-    private static bool AreStringsPalindromesOfEachOther(string text1, string text2)
+    private static bool AreStringsAnagramsOfEachOther(string text1, string text2)
     {
         if (string.IsNullOrWhiteSpace(text1) && string.IsNullOrWhiteSpace(text2))
             return true;
