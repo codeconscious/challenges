@@ -41,17 +41,19 @@ public class Palindrome : IRunnable
             return charFrequencies;
         }
 
+        // A less manual solution could use .OrderBy(kvp => kvp.Key).SequenceEqual
+        // (cf. https://stackoverflow.com/a/9547410/11767771).
         static bool AreDictionariesEqual(Dictionary<char, int> first, Dictionary<char, int> second)
         {
             if (first.Count != second.Count)
                 return false;
 
-            foreach (var pair in first)
+            foreach (var firstPair in first)
             {
-                if (!second.ContainsKey(pair.Key))
+                if (!second.ContainsKey(firstPair.Key))
                     return false;
 
-                if (pair.Value != second[pair.Key])
+                if (firstPair.Value != second[firstPair.Key])
                     return false;
             }
 
