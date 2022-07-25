@@ -1,6 +1,13 @@
-# Determines whether a string is comprised of unique characters,
-# returning a bool indicating the result.
-def problem_1_has_unique_chars(text)
+# Problem 1: Are all string characters unique?
+
+# Displays the text and results on the terminal.
+def print_results(text)
+    print %Q["#{text}" -> ]
+    puts has_unique_chars(text)
+end
+
+# Returns a bool indicating whether all string characters are unique.
+def has_unique_chars(text)
     chars = text.split('')
     used_chars = []
 
@@ -15,5 +22,6 @@ def problem_1_has_unique_chars(text)
     return true;
 end
 
-puts problem_1_has_unique_chars("abcdefghijklmnopqrstuvwxyz")
-puts problem_1_has_unique_chars("aabcdefghijklmnopqrstuvwxyz")
+print_results("abcdefghijklmnopqrstuvwxyz")
+print_results("aabcdefghijklmnopqrstuvwxyz")
+print_results("abcdefghijklmnopqrstuvwxyza")
