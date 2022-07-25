@@ -26,6 +26,7 @@ internal static class Program
             // "Cracking the Code Interview"
             "cci-01-01" => new CrackingCodingInterview.Problem01_AreAllCharsUnique(),
             "cci-01-02" => new CrackingCodingInterview.Problem02_AreStringsPermutations(),
+            "cci-01-03" => new CrackingCodingInterview.Problem03_ReplaceStrings(),
 
             // Problems from friends
             "alphanumber" => new Friends.AlphabeticNumberPuzzleSolver(),
