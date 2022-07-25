@@ -23,6 +23,10 @@ internal static class Program
             "euler5" => new ProjectEuler.Problem5(),
             "euler6" => new ProjectEuler.Problem6(),
 
+            // "Cracking the Code Interview"
+            "cci-01-01" => new CrackingCodingInterview.Problem01_AreAllCharsUnique(),
+            "cci-01-02" => new CrackingCodingInterview.Problem02_AreStringsPermutations(),
+
             // Problems from friends
             "alphanumber" => new Friends.AlphabeticNumberPuzzleSolver(),
 

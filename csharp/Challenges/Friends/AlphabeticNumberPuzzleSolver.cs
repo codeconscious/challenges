@@ -2,11 +2,21 @@ using System.Text;
 
 namespace Challenges.Friends;
 
+/// <summary>
+/// I created this very rough solution to answer puzzles that a friend presented.
+/// I was racing against the clock, so I brute-forced the solutions.
+/// Originally, things were simpler, but after receiving the second puzzle,
+/// I decided to upgrade the original code to support any simliar arithmetic operation.
+/// It's all crammed unceremoniously into this file, but maybe I'll reorganize it someday.
+/// </summary>
 public class AlphabeticNumberPuzzleSolver : IRunnable
 {
     public void Run()
     {
+        // Determine the numbers in ABCDE * A = EEEEE.
         Calculate(ArithmeticOperationType.Multiplication, "ABCDE", "A", "EEEEEE");
+
+        // Determine the numbers in SEND + MORE = MONEY.
         Calculate(ArithmeticOperationType.Addition, "SEND", "MORE", "MONEY");
     }
 
