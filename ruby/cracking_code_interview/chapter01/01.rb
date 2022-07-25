@@ -2,7 +2,7 @@
 
 # Displays the text and results on the terminal.
 def print_results(text)
-    print %Q["#{text}" -> ]
+    print %Q[   "#{text}" -> ]
     puts has_unique_chars(text)
 end
 

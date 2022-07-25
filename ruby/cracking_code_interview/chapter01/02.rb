@@ -2,7 +2,7 @@
 
 # Displays the text and results on the terminal.
 def print_results(first, second)
-    print %Q[  "#{first}", "#{second}" -> ]
+    print %Q[   "#{first}", "#{second}" -> ]
     puts are_strings_permutations(first, second)
 end
 
