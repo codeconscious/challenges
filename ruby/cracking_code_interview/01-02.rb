@@ -1,6 +1,14 @@
+# Problem 2: Are two strings permutations of each other?
+
+# Displays the text and results on the terminal.
+def print_results(first, second)
+    print %Q[  "#{first}", "#{second}" -> ]
+    puts are_strings_permutations(first, second)
+end
+
 # Returns a bool indicating if two given strings are
 # permutations of each other.
-def problem_2_are_strings_permutations(first, second)
+def are_strings_permutations(first, second)
     if (first == nil && second == nil)
         return true
     elsif (first == nil || second == nil)
@@ -39,8 +47,10 @@ def problem_2_are_strings_permutations(first, second)
 end
 
 # Test cases
-puts problem_2_are_strings_permutations("aabaa", "baaaa"); # true
-puts problem_2_are_strings_permutations("aabaa", "caaaa"); # false
-puts problem_2_are_strings_permutations("012345", "543210"); # true
-puts problem_2_are_strings_permutations("012345", "54321A"); # false
-puts problem_2_are_strings_permutations("012345", "543210A"); # false
+print_results(nil, nil); # true
+print_results(nil, "aba"); # true
+print_results("aabaa", "baaaa"); # true
+print_results("aabaa", "caaaa"); # false
+print_results("012345", "543210"); # true
+print_results("012345", "54321A"); # false
+print_results("012345", "543210A"); # false
