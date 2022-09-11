@@ -9,10 +9,10 @@ end
 
 # Returns a bool indicating if two given strings are permutations of each other.
 def are_strings_permutations?(first, second)
+  return true if first == second
   return true if first.nil? && second.nil?
   return false if first.nil? || second.nil?
   return false if first.length != second.length
-  return true if first == second
 
   first_counts = char_counts(first)
   second_counts = char_counts(second)
