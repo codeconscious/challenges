@@ -9,6 +9,8 @@ end
 
 def compress_text(text)
   output = ''
+  return output if text.nil? || text == ''
+
   current_char = text[0]
   current_total = 0
 
@@ -25,5 +27,7 @@ def compress_text(text)
   output
 end
 
+print_results(nil)
+print_results('')
 print_results('aaabbb')
 print_results('aaaaabbbbbbcddeeeaaa')
