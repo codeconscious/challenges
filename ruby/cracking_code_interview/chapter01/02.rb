@@ -2,55 +2,38 @@
 
 # Displays the text and results on the terminal.
 def print_results(first, second)
-    print %Q[   "#{first}", "#{second}" -> ]
-    puts are_strings_permutations(first, second)
+  print "   #{first.nil? ? 'NIL' : first}, #{second.nil? ? 'NIL' : second} -> "
+  puts are_strings_permutations?(first, second).to_s.upcase
 end
 
-# Returns a bool indicating if two given strings are
-# permutations of each other.
-def are_strings_permutations(first, second)
-    if (first == nil && second == nil)
-        return true
-    elsif (first == nil || second == nil)
-        return false
-    elsif (first.length() != second.length())
-        return false
+# Returns a bool indicating if two given strings are permutations of each other.
+def are_strings_permutations?(first, second)
+  return true if first.nil? && second.nil?
+  return false if first.nil? || second.nil?
+  return false if first.length != second.length
+
+  first_counts = char_counts(first)
+  second_counts = char_counts(second)
+
+  first_counts == second_counts
+end
+
+def char_counts(text)
+  text.chars.to_a.inject({}) do |hash, item|
+    if hash.key?(item)
+      hash[item] += 1
+    else
+      hash[item] = 1
     end
-
-    frequencyHash = {}
-
-    # Increase map values for each character instance in the first string,
-    # and decrease for each in the second string.
-    for i in 0..first.length()-1
-        if frequencyHash.key?(first[i])
-            frequencyHash[first[i]] += 1
-        elsif
-            frequencyHash[first[i]] = 1
-        end
-
-        if frequencyHash.key?(second[i])
-            frequencyHash[second[i]] -= 1
-        elsif
-            frequencyHash[second[i]] = -1
-        end
-    end
-
-    # All map pair values equaling 0 means the character frequencies are
-    # identical, indicating that the strings are permutations of each other.
-    frequencyHash.each do |key, value|
-        if value != 0
-            return false
-        end
-    end
-
-    return true
+    hash
+  end
 end
 
 # Test cases
-print_results(nil, nil); # true
-print_results(nil, "aba"); # true
-print_results("aabaa", "baaaa"); # true
-print_results("aabaa", "caaaa"); # false
-print_results("012345", "543210"); # true
-print_results("012345", "54321A"); # false
-print_results("012345", "543210A"); # false
+print_results(nil, nil); # TRUE
+print_results(nil, 'aba'); # false
+print_results('aabaa', 'baaaa'); # TRUE
+print_results('aabaa', 'caaaa'); # false
+print_results('012345', '543210'); # TRUE
+print_results('012345', '54321A'); # false
+print_results('012345', '543210A'); # false
