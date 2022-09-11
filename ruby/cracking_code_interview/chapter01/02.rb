@@ -1,4 +1,5 @@
 # Problem 2: Are two strings permutations of each other?
+# frozen_string_literal: true
 
 # Displays the text and results on the terminal.
 def print_results(first, second)

@@ -1,4 +1,5 @@
 # Problem 1: Are all string characters unique?
+# frozen_string_literal: true
 
 # Displays the text and results on the terminal.
 def print_results(text)
