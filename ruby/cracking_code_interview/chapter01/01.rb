@@ -8,16 +8,7 @@ end
 
 # Returns a bool indicating whether all characters in a string are unique.
 def all_chars_unique?(text)
-  chars = text.split('')
-  used_chars = []
-
-  chars.each do |letter|
-    return false if used_chars.include?(letter)
-
-    used_chars.push(letter)
-  end
-
-  true
+  text.chars.to_a.length == text.chars.to_a.uniq.length
 end
 
 print_results('abcdefghijklmnopqrstuvwxyz')
