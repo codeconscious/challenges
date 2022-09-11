@@ -2,7 +2,7 @@
 
 # Displays the text and results on the terminal.
 def print_results(first, second)
-  print "   #{first.nil? ? 'NIL' : first}, #{second.nil? ? 'NIL' : second} -> "
+  print "  - #{first.nil? ? 'NIL' : first}, #{second.nil? ? 'NIL' : second} -> "
   puts are_strings_permutations?(first, second).to_s.upcase
 end
 
@@ -19,13 +19,12 @@ def are_strings_permutations?(first, second)
 end
 
 def char_counts(text)
-  text.chars.to_a.inject({}) do |hash, item|
+  text.chars.to_a.each_with_object({}) do |item, hash|
     if hash.key?(item)
       hash[item] += 1
     else
       hash[item] = 1
     end
-    hash
   end
 end
 
