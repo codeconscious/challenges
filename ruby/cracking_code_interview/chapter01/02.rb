@@ -11,6 +11,7 @@ def are_strings_permutations?(first, second)
   return true if first.nil? && second.nil?
   return false if first.nil? || second.nil?
   return false if first.length != second.length
+  return true if first == second
 
   first_counts = char_counts(first)
   second_counts = char_counts(second)
@@ -18,21 +19,21 @@ def are_strings_permutations?(first, second)
   first_counts == second_counts
 end
 
+# Returns a hash containing the counts for each character in the given text.
 def char_counts(text)
-  text.chars.to_a.each_with_object({}) do |item, hash|
-    if hash.key?(item)
-      hash[item] += 1
-    else
-      hash[item] = 1
-    end
+  text.chars.to_a.each_with_object({}) do |char, hash|
+    hash[char] = hash.key?(char) ? hash[char] + 1 : 1
   end
 end
 
 # Test cases
 print_results(nil, nil); # TRUE
-print_results(nil, 'aba'); # false
 print_results('aabaa', 'baaaa'); # TRUE
-print_results('aabaa', 'caaaa'); # false
 print_results('012345', '543210'); # TRUE
+print_results('!@#$%', '%$#@!'); # TRUE
+print_results('あいうえお', 'おえういあ'); # TRUE
+print_results('aba', nil); # false
+print_results(nil, 'aba'); # false
+print_results('aabaa', 'caaaa'); # false
 print_results('012345', '54321A'); # false
 print_results('012345', '543210A'); # false
