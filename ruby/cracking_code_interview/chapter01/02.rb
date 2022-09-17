@@ -14,10 +14,7 @@ def are_strings_permutations?(first, second)
   return false if first.nil? || second.nil?
   return false if first.length != second.length
 
-  first_counts = char_counts(first)
-  second_counts = char_counts(second)
-
-  first_counts == second_counts
+  char_counts(first) == char_counts(second)
 end
 
 # Returns a hash containing the counts for each character in the given text.
